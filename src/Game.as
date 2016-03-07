@@ -15,12 +15,13 @@ package
 		}
 		
 		
-		private function onAddedToStage():void
+		private function onAddedToStage(event:Event):void
 		{
 			trace ("starling framework initialized!");
 			
 			screenWelcome = new Welcome ();
 			this.addChild(screenWelcome);
+			screenWelcome.initialize();
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package screens
 {
-	import flash.events.Event;
+	
+	import com.greensock.TweenLite;
 	
 	import starling.display.Button;
 	import starling.display.Image;
@@ -22,7 +23,7 @@ package screens
 			this.addEventListener(starling.events.Event.ADDED_TO_STAGE, onAddedToStage);
 		}
 		
-		private function onAddedToStage(event:flash.events.Event):void
+		private function onAddedToStage(event:Event):void
 		{
 			trace  ("Welcome screen initialized");
 			drawScreen();	
@@ -40,6 +41,8 @@ package screens
 			
 			hero = new Image(Assets.getTexture("WelcomeHero"));
 			this.addChild(hero);
+			hero.x = -hero.width;
+			hero.y = 100;
 			
 			playBtn = new Button(Assets.getTexture("WelcomePlayBtn"));
 			playBtn.x = 500;
@@ -50,6 +53,26 @@ package screens
 			aboutBtn.x = 410;
 			aboutBtn.y = 380;
 			this.addChild(aboutBtn);
+		}
+		public function initialize():void
+		{
+			this.visible = true;
+			
+			hero.x = -hero.width;
+			hero.y = 100;
+			
+			TweenLite.to(hero, 2, {x: 80})
+			
+			this.addEventListener(Event.ENTER_FRAME, heroAnimation)
+			
+		}
+		
+		private function heroAnimation():void
+		{
+			var currentDate:Date = new Date();
+			hero.y = 100 + (Math.cos(currentDate.getTime() * 0.0015) * 25)
+			playBtn.y = 260 + (Math.cos(currentDate.getTime() * 0.002) * 10)
+			aboutBtn.y = 380 + (Math.cos(currentDate.getTime() * 0.00175) * 10)
 		}
 	}
 }

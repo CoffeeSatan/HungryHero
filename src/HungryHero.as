@@ -3,7 +3,7 @@ package
 	import flash.display.Sprite;
 	
 	import net.hires.debug.Stats;
-	
+	import screens.Welcome;
 	import starling.core.Starling;
 	import starling.display.Image;
 	
