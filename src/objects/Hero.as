@@ -1,11 +1,11 @@
 package objects
 {
 	import starling.core.Starling;
-	import flash.display.MovieClip;
+	import starling.display.MovieClip;
 	import starling.display.Sprite;
 	import starling.events.Event;
 	import starling.textures.Texture;
-	
+	import Assets;
 	public class Hero extends Sprite
 	{
 		private var heroArt:MovieClip;
