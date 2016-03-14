@@ -53,6 +53,7 @@ package
 				gameTextures[name] = Texture.fromBitmap(bitmap);
 					
 			}
+			
 			return gameTextures[name];
 		}
 	}

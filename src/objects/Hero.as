@@ -1,9 +1,10 @@
 package objects
 {
+	import starling.core.Starling;
 	import flash.display.MovieClip;
-	
 	import starling.display.Sprite;
 	import starling.events.Event;
+	import starling.textures.Texture;
 	
 	public class Hero extends Sprite
 	{
@@ -22,12 +23,11 @@ package objects
 		
 		private function createHeroArts():void
 		{
-			heroArt = new MovieClip(Assets.getAtlas().getTextures("fly_", 20);
+				heroArt = new MovieClip(Assets.getAtlas().getTextures("fly_"), 20);
 				heroArt.x = Math.ceil(-heroArt.width/2);
 				heroArt.y = Math.ceil(-heroArt.height/2);
 				starling.core.Starling.juggler.add(heroArt);
-				this.addChild(heroArt);
-			
+				this.addChild(heroArt);			
 		}
 	}
 }
